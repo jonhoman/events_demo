@@ -1,0 +1,30 @@
+<p>
+  <b>Title:</b>
+  <%=h @event.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @event.description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @event.location %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @event.date %>
+</p>
+
+<p>
+  <b>Attendees:</b><br />
+  <% @event.attendees.each do |attendee| %>
+    <%= attendee.first_name%> <%= attendee.last_name %><br />
+  <% end %>
+</p>
+
+<%= link_to 'Register', new_event_attendee_path(@event) %> |
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
